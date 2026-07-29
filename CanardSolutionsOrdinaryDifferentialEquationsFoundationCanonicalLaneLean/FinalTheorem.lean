@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.CanardSolutionsOrdinaryDifferentialEquationsFoundationCanonicalLaneLean.CanardPhaseSpace
+import HautevilleHouse.CanardSolutionsOrdinaryDifferentialEquationsFoundationCanonicalLaneLean.CriticalManifold
+import HautevilleHouse.CanardSolutionsOrdinaryDifferentialEquationsFoundationCanonicalLaneLean.SlowFastSystem
+import HautevilleHouse.CanardSolutionsOrdinaryDifferentialEquationsFoundationCanonicalLaneLean.CanardExistence
+import HautevilleHouse.CanardSolutionsOrdinaryDifferentialEquationsFoundationCanonicalLaneLean.CanardExplosion
+
+namespace HautevilleHouse
+namespace CanardSolutionsOrdinaryDifferentialEquationsFoundationCanonicalLaneLean
+
+def ConstrainedCanardClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_canard_endgame (A : AdmissibleClass) :
+    ConstrainedCanardClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CanardSolutionsOrdinaryDifferentialEquationsFoundationCanonicalLaneLean
+end HautevilleHouse
